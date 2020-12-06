@@ -26,6 +26,18 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    // For recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    // For materialDateTimePicker
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    // For recyclerview multi-select
+    implementation 'com.bignerdranch.android:recyclerview-multiselect:0.2'
+    // For text drawable
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    // For float labeled edit text
+    implementation 'com.wrapp.floatlabelededittext:library:0.0.6'
+    // For floating action button(material library)
+    implementation 'com.google.android.material:material:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
