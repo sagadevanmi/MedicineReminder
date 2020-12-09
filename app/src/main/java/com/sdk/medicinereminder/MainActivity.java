@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import android.content.ContentUris;
-import androidx.loader.content.CursorLoader;
+import android.content.CursorLoader;
 import android.content.Intent;
 import android.net.Uri;
 import android.widget.AdapterView;
@@ -80,7 +80,7 @@ public abstract class MainActivity extends AppCompatActivity implements LoaderMa
             }
         });
 
-        LoaderManager.getInstance(this).initLoader(VEHICLE_LOADER, null, this);
+        getLoaderManager().initLoader(VEHICLE_LOADER, null, this);
 
 
     }
