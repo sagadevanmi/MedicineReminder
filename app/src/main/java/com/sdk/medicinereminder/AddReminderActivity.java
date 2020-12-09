@@ -1,11 +1,4 @@
-// COMMENTED @Override on line 257
-// Made AddReminderActivity Class abstract in order to implement LoaderManager
-// Changed some imports to androidx
 package com.sdk.medicinereminder;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 import android.app.AlertDialog;
 import android.app.LoaderManager;
@@ -16,8 +9,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import androidx.core.app.NavUtils;
-import com.google.android.material.appbar.MaterialToolbar;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -30,20 +22,27 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.fragment.app.FragmentTransaction;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sdk.medicinereminder.data.AlarmReminderContract;
 import com.sdk.medicinereminder.reminder.AlarmScheduler;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
-public abstract class AddReminderActivity extends AppCompatActivity implements
+/**
+ * Created by delaroy on 10/26/17.
+ */
+
+public class AddReminderActivity extends AppCompatActivity implements
         TimePickerDialog.OnTimeSetListener,
-        DatePickerDialog.OnDateSetListener, LoaderManager.LoaderCallbacks<Cursor>{
+        DatePickerDialog.OnDateSetListener, LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int EXISTING_VEHICLE_LOADER = 0;
 
@@ -207,7 +206,7 @@ public abstract class AddReminderActivity extends AppCompatActivity implements
             mFAB2.setVisibility(View.VISIBLE);
         }
 
-        setSupportActionBar(mToolbar);
+        //setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(R.string.title_activity_add_reminder);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -255,16 +254,9 @@ public abstract class AddReminderActivity extends AppCompatActivity implements
 
     // Obtain time from time picker
 //    @Override
-    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
-        mHour = hourOfDay;
-        mMinute = minute;
-        if (minute < 10) {
-            mTime = hourOfDay + ":" + "0" + minute;
-        } else {
-            mTime = hourOfDay + ":" + minute;
-        }
-        mTimeText.setText(mTime);
-    }
+//    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+//
+//    }
 
     // Obtain date from date picker
     @Override
@@ -694,4 +686,15 @@ public abstract class AddReminderActivity extends AppCompatActivity implements
 
     }
 
+    @Override
+    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+        mHour = hourOfDay;
+        mMinute = minute;
+        if (minute < 10) {
+            mTime = hourOfDay + ":" + "0" + minute;
+        } else {
+            mTime = hourOfDay + ":" + minute;
+        }
+        mTimeText.setText(mTime);
+    }
 }

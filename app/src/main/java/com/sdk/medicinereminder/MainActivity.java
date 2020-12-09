@@ -1,29 +1,29 @@
 package com.sdk.medicinereminder;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
-
+import android.app.LoaderManager;
 import android.app.ProgressDialog;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-
 import android.content.ContentUris;
 import android.content.CursorLoader;
 import android.content.Intent;
+import android.content.Loader;
+import android.database.Cursor;
 import android.net.Uri;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
 import android.widget.AdapterView;
-
+import android.widget.ListView;
 import com.google.android.material.appbar.MaterialToolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-
 import com.sdk.medicinereminder.data.AlarmReminderContract;
 import com.sdk.medicinereminder.data.AlarmReminderDbHelper;
 
-public abstract class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private FloatingActionButton mAddReminderButton;
     private MaterialToolbar mToolbar;
@@ -39,16 +39,14 @@ public abstract class MainActivity extends AppCompatActivity implements LoaderMa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = (MaterialToolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+        mToolbar =  (MaterialToolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.app_name);
+
 
         reminderListView = (ListView) findViewById(R.id.list);
         View emptyView = findViewById(R.id.empty_view);
         reminderListView.setEmptyView(emptyView);
-
-        mCursorAdapter = new AlarmCursorAdapter(this, null);
-        reminderListView.setAdapter(mCursorAdapter);
 
         mCursorAdapter = new AlarmCursorAdapter(this, null);
         reminderListView.setAdapter(mCursorAdapter);
@@ -117,7 +115,6 @@ public abstract class MainActivity extends AppCompatActivity implements LoaderMa
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursorAdapter.swapCursor(null);
-
 
     }
 }

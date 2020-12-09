@@ -62,7 +62,7 @@ public class ReminderAlarmService extends IntentService {
             }
         }
 
-        Notification note = new NotificationCompat.Builder(this, "") //Add String channeld to constructor arguments and create notification channel
+        Notification note = new NotificationCompat.Builder(this, "C1") //Added String channeld to constructor arguments and create notification channel
                 .setContentTitle(getString(R.string.reminder_title))
                 .setContentText(description)
                 .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
