@@ -28,17 +28,17 @@
         <EditText
             android:layout_width="match_parent"
             android:id="@+id/reminder_title"
-            android:layout_marginLeft="72dp"
+            android:layout_marginStart="72dp"
             android:hint="Reminder"
             android:textSize="25dp"
             android:lines="4"
             android:minLines="4"
-            android:gravity="top|left"
+            android:gravity="start"
             android:textColor="@android:color/white"
             android:scrollHorizontally="false"
             android:textColorHint="@android:color/darker_gray"
             android:inputType="textCapWords|textMultiLine"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_height="140dp"/>
 
     </LinearLayout>
@@ -76,9 +76,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/date_icon"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="32dp"
                     android:src="@drawable/ic_view_day"
                     android:layout_centerVertical="true"/>
 
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/date_icon">
+                    android:layout_toEndOf="@+id/date_icon">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -250,7 +250,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:clickable="true"
-                android:onClick="setRepeatType"
+                android:onClick="selectRepeatType"
                 android:id="@+id/RepeatType"
                 android:background="#333333">
 
