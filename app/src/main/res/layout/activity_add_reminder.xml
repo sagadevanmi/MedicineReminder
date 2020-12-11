@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:id="@+id/reminder_title"
             android:layout_marginStart="72dp"
-            android:hint="Reminder"
+            android:hint="Medicine Name"
             android:textSize="25dp"
             android:lines="4"
             android:minLines="4"
@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/set_date"
                         android:textSize="15dp"
-                        android:textColor="#444444"/>
+                        android:textColor="@android:color/darker_gray"/>
 
                 </LinearLayout>
 
@@ -143,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/set_time"
                         android:textSize="15dp"
-                        android:textColor="#444444"/>
+                        android:textColor="@android:color/darker_gray"/>
 
                 </LinearLayout>
 
@@ -184,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/set_repeat"
                         android:textSize="15dp"
-                        android:textColor="#444444"/>
+                        android:textColor="@android:color/darker_gray"/>
 
                 </LinearLayout>
 
@@ -240,7 +240,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/set_repeat_no"
                         android:textSize="15dp"
-                        android:textColor="#444444"/>
+                        android:textColor="@android:color/darker_gray"/>
 
                 </LinearLayout>
 
@@ -283,7 +283,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/set_repeat_type"
                         android:textSize="15dp"
-                        android:textColor="#444444"/>
+                        android:textColor="@android:color/darker_gray"/>
 
                 </LinearLayout>
 

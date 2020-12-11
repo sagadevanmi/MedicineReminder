@@ -206,7 +206,7 @@ public class AddReminderActivity extends AppCompatActivity implements
             mFAB2.setVisibility(View.VISIBLE);
         }
 
-        //setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(R.string.title_activity_add_reminder);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
